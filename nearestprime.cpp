@@ -1,33 +1,52 @@
-#include<iostream>
+//  Program to find nearest Prime number
+//  Pankaj Sharma
+//  11 June 2021
 
+#include<iostream>
 using namespace std;
+
+int isPrime(int n){
+    int i,k=0;
+    for(i=1;i<=n;i++){
+        if (n%i == 0)
+            k++;  
+    }
+
+    if (k == 2)
+        return true;
+    else
+        return false;
+
+}
 
 int main(){
 
-    cout<<(7%1);
+    int i,j,greaterPrime,smallerPrime,n;
+    greaterPrime = smallerPrime = 0;
+
+    cout<<"Enter a number : ";
+    cin>>n;
+
+    for(i=n; ;i--){
+        if (isPrime(i))
+        {
+            smallerPrime = i;
+            break;
+        }
+    }
+
+    for(j=n; ;j++){
+        if (isPrime(j))
+        {
+            greaterPrime = j;
+            break;
+        }
+    }
+
+    if (i == j)
+        cout<<"Nearest prime of "<<n<<" is "<<i;
+    else
+        cout<<"Nearest prime of "<<n<<" is "<<i<<" & "<<j;
 
     return 0;
 }
-
-// void nMax(int a[6],int n,int k) {
-//    int temp=0;
-//    for (int i = 0; i <= n-1; i++)
-//    {
-//        for (int j = i+1; j <= n-1; j++)
-//        {
-//            if (a[i]>a[j])     
-//            {
-//                temp = a[i];
-//                a[i] = a[j];
-//                a[j] = temp;
-//            }
-           
-//        }
-//    }   
-
-//    for (int i = 0; i <= n-1; i++)
-//    {
-//        printf("%d\t",a[i]);
-//    }
-    
-// }
