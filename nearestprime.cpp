@@ -50,3 +50,12 @@ int main(){
 
     return 0;
 }
+
+
+//  Output :
+
+//  Enter a number : 7
+//  Nearest prime of 7 is 7
+
+//  Enter a number : 30
+//  Nearest prime of 30 is 29 & 31
