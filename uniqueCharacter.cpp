@@ -2,16 +2,17 @@
 //  Pankaj Sharma
 //  11 June 2021
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int checkForUnique(string str){
-    int i,j;
+    int i;
+
+    sort(str.begin(),str.end());
+
     for(i=0;i<=str.length()-1;i++){
-        for(j=i+1;j<=str.length()-1;j++){
-            if (str[i] == str[j])
-                return false;
-        }
+        if (str[i] == str[i+1])
+            return false;
     }
     return true;
 }
