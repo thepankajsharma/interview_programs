@@ -1,6 +1,6 @@
-//  Program to merg two array
+//  Program to 
 //  Pankaj Sharma
-//  12 June 2021
+//  11 June 2021
 
 #include<bits/stdc++.h>
 using namespace std;
