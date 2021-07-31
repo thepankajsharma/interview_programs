@@ -1,14 +1,44 @@
 #include <iostream>
+using namespace std;
 
-int add(int &a,int &b)
-{
-	return a+b;
+
+vector<int> sortedSquares(vector<int>& nums) {
+	long int temp,i,j;
+	
+	for(i=0;i<=nums.size()-1;i++)
+		nums[i] *= nums[i];
+	
+	for(i=0;i<=nums.size()-1;i++){
+		for(j=i;j<=nums.size()-1;j++){
+			if(nums[i]>nums[j]){
+				temp = nums[i];
+				nums[i] = nums[j];
+				nums[j]=temp;
+			}
+		}
+	}
+	return nums;class Solution {
+public:
+    vector<int> sortedSquares(vector<int>& nums) {
+        int i;
+        
+        for(i=0;i<=nums.size()-1;i++)
+            nums[i] *= nums[i];
+        
+        sort(nums.begin(),nums.end());
+        
+        return nums;
+    }
+};
 }
 
-void main()
+int main()
 {
+	
 	int x = 4;
 	int y = 8;
-	int sum = add(x,y);
-	std::cout<<sum;
+	add(&x,y);
+	cout<<x<<endl;
+	cout<<y;
+	return 0;
 }
